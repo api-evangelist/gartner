@@ -1,0 +1,621 @@
+"""
+Gartner GraphQL Schema
+Conceptual schema covering Gartner research, advisory, analyst, vendor, peer review, and enterprise access capabilities.
+"""
+
+# --- Research & Documents ---
+
+type Research {
+  id: ID!
+  title: String!
+  abstract: String
+  publishedDate: String
+  modifiedDate: String
+  contentType: ContentType
+  audience: Audience
+  tags: [ContentTag]
+  topics: [Topic]
+  analysts: [Analyst]
+  industries: [Industry]
+  technologies: [Technology]
+  accessLevel: ContentAccess
+  document: ResearchDocument
+}
+
+type ResearchDocument {
+  id: ID!
+  researchId: ID!
+  format: String
+  pageCount: Int
+  downloadUrl: String
+  previewUrl: String
+  researchType: ResearchType
+  keywords: [Keyword]
+}
+
+enum ResearchType {
+  HYPE_CYCLE
+  MAGIC_QUADRANT
+  MARKET_GUIDE
+  FORECAST
+  SURVEY
+  PEER_INSIGHTS
+  TECH_PROFILE
+  COMPETITIVE_LANDSCAPE
+  MARKET_RESEARCH
+  CRITICAL_CAPABILITIES
+  INNOVATION_INSIGHT
+  NOTE
+}
+
+type Note {
+  id: ID!
+  title: String!
+  body: String
+  publishedDate: String
+  analyst: Analyst
+  topic: Topic
+  tags: [ContentTag]
+}
+
+type HypeReport {
+  id: ID!
+  title: String!
+  year: Int
+  topic: Topic
+  technologies: [Technology]
+  publishedDate: String
+  analysts: [Analyst]
+  document: ResearchDocument
+}
+
+type MagicQuadrant {
+  id: ID!
+  title: String!
+  year: Int
+  market: String
+  vendors: [VendorProfile]
+  analysts: [Analyst]
+  publishedDate: String
+  document: ResearchDocument
+}
+
+type PeerInsights {
+  id: ID!
+  product: Product
+  vendor: Vendor
+  reviews: [PeerReview]
+  aggregateRating: Rating
+  reviewCount: Int
+  lastUpdated: String
+}
+
+type TechProfile {
+  id: ID!
+  technology: Technology
+  description: String
+  maturityLevel: String
+  adoptionRate: String
+  analysts: [Analyst]
+  publishedDate: String
+  document: ResearchDocument
+}
+
+type MarketGuide {
+  id: ID!
+  title: String!
+  market: String
+  year: Int
+  vendors: [Vendor]
+  analysts: [Analyst]
+  publishedDate: String
+  document: ResearchDocument
+}
+
+type Forecast {
+  id: ID!
+  title: String!
+  forecastYear: Int
+  publishedDate: String
+  region: String
+  currency: String
+  analysts: [Analyst]
+  document: ResearchDocument
+}
+
+type MarketForecast {
+  id: ID!
+  market: String!
+  forecast: Forecast
+  growthRate: Float
+  totalAddressableMarket: Float
+  currency: String
+  regions: [String]
+}
+
+type CompetitiveLandscape {
+  id: ID!
+  market: String!
+  vendors: [VendorProfile]
+  analysts: [Analyst]
+  publishedDate: String
+  document: ResearchDocument
+}
+
+type CIOSurvey {
+  id: ID!
+  year: Int!
+  title: String
+  respondentCount: Int
+  regions: [String]
+  topPriorities: [TopPriority]
+  document: ResearchDocument
+  publishedDate: String
+}
+
+type ITSpend {
+  id: ID!
+  year: Int!
+  segment: String
+  region: String
+  totalSpend: Float
+  currency: String
+  growthRate: Float
+  forecast: MarketForecast
+}
+
+type TopPriority {
+  id: ID!
+  rank: Int
+  title: String!
+  description: String
+  category: String
+  year: Int
+  audience: Audience
+}
+
+# --- Analysts ---
+
+type Analyst {
+  id: ID!
+  name: String!
+  bio: AnalystBio
+  expertise: [AnalystExpertise]
+  contact: AnalystContact
+  topics: [Topic]
+  industries: [Industry]
+  research: [Research]
+}
+
+type AnalystBio {
+  id: ID!
+  analystId: ID!
+  title: String
+  summary: String
+  yearsOfExperience: Int
+  education: [String]
+  previousRoles: [String]
+}
+
+type AnalystExpertise {
+  id: ID!
+  analystId: ID!
+  area: String!
+  level: String
+  technologies: [Technology]
+  industries: [Industry]
+}
+
+type AnalystContact {
+  id: ID!
+  analystId: ID!
+  email: String
+  phone: String
+  linkedIn: String
+  twitterHandle: String
+  inquiryAvailable: Boolean
+}
+
+# --- Topics & Taxonomy ---
+
+type Topic {
+  id: ID!
+  name: String!
+  details: TopicDetails
+  area: TopicArea
+  tags: [TopicTag]
+  research: [Research]
+  analysts: [Analyst]
+}
+
+type TopicDetails {
+  id: ID!
+  topicId: ID!
+  description: String
+  relatedTopics: [Topic]
+  trendingScore: Float
+  lastUpdated: String
+}
+
+type TopicArea {
+  id: ID!
+  name: String!
+  description: String
+  topics: [Topic]
+}
+
+type TopicTag {
+  id: ID!
+  label: String!
+  slug: String
+  topicId: ID
+}
+
+type Keyword {
+  id: ID!
+  term: String!
+  frequency: Int
+  relatedTopics: [Topic]
+}
+
+# --- Industries & Sectors ---
+
+type Industry {
+  id: ID!
+  name: String!
+  code: IndustryCode
+  sectorCode: SectorCode
+  description: String
+  research: [Research]
+  vendors: [Vendor]
+}
+
+type IndustryCode {
+  id: ID!
+  code: String!
+  standard: String
+  description: String
+}
+
+type SectorCode {
+  id: ID!
+  code: String!
+  sector: String!
+  subSector: String
+}
+
+# --- Technology ---
+
+type Technology {
+  id: ID!
+  name: String!
+  techType: TechType
+  description: String
+  maturityStage: String
+  vendors: [Vendor]
+  products: [Product]
+  topics: [Topic]
+  hypeReports: [HypeReport]
+}
+
+enum TechType {
+  PLATFORM
+  APPLICATION
+  INFRASTRUCTURE
+  SECURITY
+  DATA_ANALYTICS
+  AI_ML
+  CLOUD
+  NETWORKING
+  DEVOPS
+  INTEGRATION
+  OTHER
+}
+
+# --- Products & Vendors ---
+
+type Product {
+  id: ID!
+  name: String!
+  vendor: Vendor
+  category: ProductCategory
+  description: String
+  technologies: [Technology]
+  peerInsights: PeerInsights
+  capabilityScores: [CapabilityScore]
+}
+
+type ProductCategory {
+  id: ID!
+  name: String!
+  description: String
+  products: [Product]
+}
+
+type Vendor {
+  id: ID!
+  name: String!
+  profile: VendorProfile
+  products: [VendorProduct]
+  industries: [Industry]
+  technologies: [Technology]
+  managedServices: [ManagedService]
+  consulting: [Consulting]
+}
+
+type VendorProfile {
+  id: ID!
+  vendorId: ID!
+  headquarters: String
+  founded: Int
+  revenue: Float
+  employeeCount: Int
+  publiclyTraded: Boolean
+  tickerSymbol: String
+  website: String
+  description: String
+  magicQuadrantPosition: String
+}
+
+type VendorProduct {
+  id: ID!
+  vendor: Vendor!
+  product: Product!
+  releaseDate: String
+  version: String
+  certifications: [String]
+}
+
+type CapabilityScore {
+  id: ID!
+  product: Product
+  dimension: String!
+  score: Float
+  maxScore: Float
+  notes: String
+  evaluatedDate: String
+}
+
+# --- Reviews & Ratings ---
+
+type Review {
+  id: ID!
+  product: Product!
+  reviewer: Buyer
+  reviewDetails: ReviewDetails
+  rating: Rating
+  publishedDate: String
+  verified: Boolean
+}
+
+type PeerReview {
+  id: ID!
+  peerInsights: PeerInsights
+  reviewer: Buyer
+  reviewDetails: ReviewDetails
+  metrics: ReviewMetrics
+  rating: Rating
+  helpful: Int
+  publishedDate: String
+}
+
+type ReviewDetails {
+  id: ID!
+  reviewId: ID!
+  pros: String
+  cons: String
+  summary: String
+  useCaseDescription: String
+  implementationDuration: String
+  companySize: String
+  role: String
+}
+
+type ReviewMetrics {
+  id: ID!
+  reviewId: ID!
+  overallSatisfaction: Float
+  deploymentEase: Float
+  featureRating: Float
+  supportRating: Float
+  valueForMoney: Float
+  willingToRecommend: Boolean
+}
+
+type Rating {
+  id: ID!
+  overall: Float!
+  maxRating: Float
+  dimensions: [RatingDimension]
+  reviewCount: Int
+}
+
+type RatingDimension {
+  id: ID!
+  ratingId: ID!
+  name: String!
+  score: Float
+  weight: Float
+}
+
+# --- Buyers ---
+
+type Buyer {
+  id: ID!
+  persona: BuyerPersona
+  type: BuyerType
+  feedback: [BuyerFeedback]
+  industry: Industry
+  companySize: String
+}
+
+enum BuyerPersona {
+  CIO
+  CTO
+  CISO
+  VP_IT
+  IT_DIRECTOR
+  IT_MANAGER
+  BUSINESS_ANALYST
+  PROCUREMENT
+  OTHER
+}
+
+enum BuyerType {
+  ENTERPRISE
+  MID_MARKET
+  SMB
+  GOVERNMENT
+  NONPROFIT
+  EDUCATION
+}
+
+type BuyerFeedback {
+  id: ID!
+  buyer: Buyer
+  product: Product
+  feedbackText: String
+  submittedDate: String
+  category: String
+}
+
+# --- Content Classification ---
+
+type ContentType {
+  id: ID!
+  name: String!
+  description: String
+  researchTypes: [ResearchType]
+}
+
+type Audience {
+  id: ID!
+  name: String!
+  description: String
+  personas: [BuyerPersona]
+  roles: [String]
+}
+
+type ContentTag {
+  id: ID!
+  label: String!
+  slug: String
+  category: String
+}
+
+# --- Service Providers ---
+
+type ServiceProvider {
+  id: ID!
+  name: String!
+  vendor: Vendor
+  managedServices: [ManagedService]
+  consulting: [Consulting]
+  certifications: [String]
+}
+
+type ManagedService {
+  id: ID!
+  provider: ServiceProvider!
+  name: String!
+  description: String
+  technologies: [Technology]
+  industries: [Industry]
+  regions: [String]
+}
+
+type Consulting {
+  id: ID!
+  provider: ServiceProvider!
+  practiceArea: String!
+  description: String
+  technologies: [Technology]
+  industries: [Industry]
+}
+
+# --- Access & Licensing ---
+
+type ContentAccess {
+  id: ID!
+  level: String!
+  requiresSubscription: Boolean
+  license: EnterpriseLicense
+  apiKey: APIKey
+}
+
+type EnterpriseLicense {
+  id: ID!
+  organizationId: ID
+  tier: String!
+  seats: Int
+  expiresAt: String
+  features: [String]
+  researchAccess: Boolean
+  analystAccessHours: Int
+}
+
+type APIKey {
+  id: ID!
+  key: String
+  organizationId: ID
+  createdAt: String
+  expiresAt: String
+  scopes: [String]
+  rateLimit: Int
+  token: Token
+}
+
+type Token {
+  id: ID!
+  value: String
+  type: String
+  expiresAt: String
+  scopes: [String]
+  issuedAt: String
+}
+
+# --- Queries ---
+
+type Query {
+  research(id: ID!): Research
+  searchResearch(query: String, type: ResearchType, topicId: ID, analystId: ID, industryId: ID): [Research]
+  hypeReport(id: ID!): HypeReport
+  magicQuadrant(id: ID!): MagicQuadrant
+  marketGuide(id: ID!): MarketGuide
+  forecast(id: ID!): Forecast
+  peerInsights(productId: ID!): PeerInsights
+  techProfile(technologyId: ID!): TechProfile
+  cioSurvey(year: Int!): CIOSurvey
+  itSpend(year: Int, segment: String, region: String): [ITSpend]
+
+  analyst(id: ID!): Analyst
+  listAnalysts(topicId: ID, industryId: ID): [Analyst]
+
+  topic(id: ID!): Topic
+  listTopics(areaId: ID): [Topic]
+  topicArea(id: ID!): TopicArea
+  listTopicAreas: [TopicArea]
+  keyword(id: ID!): Keyword
+  searchKeywords(term: String!): [Keyword]
+
+  industry(id: ID!): Industry
+  listIndustries: [Industry]
+
+  technology(id: ID!): Technology
+  searchTechnologies(name: String, type: TechType): [Technology]
+
+  vendor(id: ID!): Vendor
+  searchVendors(name: String, industryId: ID, technologyId: ID): [Vendor]
+  product(id: ID!): Product
+  searchProducts(name: String, categoryId: ID, vendorId: ID): [Product]
+
+  review(id: ID!): Review
+  listReviews(productId: ID!, limit: Int, offset: Int): [Review]
+  peerReview(id: ID!): PeerReview
+
+  buyer(id: ID!): Buyer
+  topPriorities(year: Int, audience: String): [TopPriority]
+
+  contentAccess(id: ID!): ContentAccess
+  enterpriseLicense(organizationId: ID!): EnterpriseLicense
+}
