@@ -21,6 +21,10 @@ url: https://raw.githubusercontent.com/api-evangelist/gartner/refs/heads/main/ap
 specificationVersion: '0.19'
 apis: []
 common:
+- type: VulnerabilityDisclosure
+  url: security/gartner-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/gartner-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/gartner
 - type: Website
