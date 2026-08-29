@@ -6,6 +6,17 @@ description: Gartner is a global research and advisory firm providing informatio
   public developer API; this repository tracks the company and any partner or technical
   artifacts that surface over time.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
