@@ -1,0 +1,12 @@
+# Start here to report potential security findings involving Gartner digital properties
+Contact: mailto:responsibledisclosure@gartner.com
+
+Expires: 2025-12-31T04:59:00.000Z
+
+Preferred-Languages: en
+
+Canonical: https://www.gartner.com/.well-known/security.txt
+
+Policy: https://www.gartner.com/en/about/policies/vulnerability-disclosure-program
+
+Hiring: https://jobs.gartner.com/jobs/?search=Security&department=Technology&pagesize=20

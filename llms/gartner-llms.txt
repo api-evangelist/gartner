@@ -1,0 +1,41 @@
+# Gartner Peer Insights | Resources for Vendor Portal
+
+> Search for answers to your questions about GPI Vendor Portal
+
+## Gartner Peer Insights Overview
+
+- [What is Peer Insights?](https://gpivendorresources.gartner.com/en/articles/6758997-what-is-peer-insights.md)
+- [Gartner Peer Insights Reviews + Ratings: Value for Vendors](https://gpivendorresources.gartner.com/en/articles/7110559-gartner-peer-insights-reviews-ratings-value-for-vendors.md): Learn more about the value of Gartner Peer Insights.
+
+## Setting Up Your Peer Insights Presence
+
+- [Getting Listed on Peer Insights](https://gpivendorresources.gartner.com/en/articles/8212705-getting-listed-on-peer-insights.md): Here’s your guide to listing your offerings on Peer Insights!
+- [Getting Started with Peer Insights](https://gpivendorresources.gartner.com/en/articles/6750363-getting-started-with-peer-insights.md): New to Peer Insights? Welcome, see important information to get started!
+- [How to Edit your Product/Service Name](https://gpivendorresources.gartner.com/en/articles/14418682-how-to-edit-your-product-service-name.md): How to Submit a Request to Edit Your Product Name
+- [How to Change your Company Name](https://gpivendorresources.gartner.com/en/articles/14092168-how-to-change-your-company-name.md): You must submit a request to change your company name on Gartner Peer Insights. You can find step-by-step instructions below.
+- [GPI Vendor Portal Access: Important Information and Guidelines](https://gpivendorresources.gartner.com/en/articles/9346961-gpi-vendor-portal-access-important-information-and-guidelines.md): Learn more about GPI Vendor Portal access.
+
+## Incentive Information
+
+- [Gift Card Terms and Conditions](https://gpivendorresources.gartner.com/en/articles/9930007-gift-card-terms-and-conditions.md): Terms and Conditions for each of the gift card incentives that can be chosen by the Gartner Peer Insights reviewer.
+
+## Event Sourcing
+
+- [Gartner Conference Exhibitor & Peer Insights Information](https://gpivendorresources.gartner.com/en/articles/6993147-gartner-conference-exhibitor-peer-insights-information.md): How to integrate reviews into your Gartner Exhibitor / Gartner Conference experience
+
+## Gartner Peer Insights Content: Voice of the Customer, Lessons Learned
+
+- [Voice of the Customer \(VOC\) Overview](https://gpivendorresources.gartner.com/en/articles/6746347-voice-of-the-customer-voc-overview.md): What is the Gartner Peer Insights Voice of the Customer?
+- [Voice of the Customer Publication Calendar](https://gpivendorresources.gartner.com/en/articles/6752600-voice-of-the-customer-publication-calendar.md): Check back here frequently to learn when the next VOC will be published and how to best prepare
+- [Peer Lessons Learned Document Overview](https://gpivendorresources.gartner.com/en/articles/6750318-peer-lessons-learned-document-overview.md): Peer Lessons Learned Document Overview
+- [Peer Lessons Learned Publication Calendar](https://gpivendorresources.gartner.com/en/articles/6805182-peer-lessons-learned-publication-calendar.md)
+
+## Marketing Tools Available for Vendors
+
+- [Marketing Tools for Vendors](https://gpivendorresources.gartner.com/en/articles/6746511-marketing-tools-for-vendors.md): Learn how to use GPI reviews and feedback in your marketing materials.
+- [Gartner Peer Insights Content Compliance Policy](https://gpivendorresources.gartner.com/en/articles/9264046-gartner-peer-insights-content-compliance-policy.md): Gartner Peer Insights™ Content Compliance Policy
+
+## Frequently Asked Questions \(FAQs\)
+
+- [Adding and Managing Products and Services](https://gpivendorresources.gartner.com/en/articles/6812609-adding-and-managing-products-and-services.md): Questions about adding and making changes to products on Peer Insights
+- [Submitting Requests on the Vendor Portal](https://gpivendorresources.gartner.com/en/articles/6812617-submitting-requests-on-the-vendor-portal.md): Questions about requests, request statuses, and more

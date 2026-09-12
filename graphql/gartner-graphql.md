@@ -1,5 +1,12 @@
 # Gartner GraphQL Schema
 
+> **PROVENANCE WARNING — this is NOT a Gartner contract.** This schema was authored by
+> API Evangelist as a conceptual data model. Gartner does not publish a GraphQL API, and
+> no GraphQL endpoint, SDL or introspection surface was found on any gartner.com host
+> during the 2026-09-12 enrichment pass. Nothing here was fetched from Gartner. The
+> `type: GraphQL` pointer that used to advertise this file in `apis.yml` was removed on
+> 2026-09-12 because it asserted a contract Gartner does not ship.
+
 Gartner is a global research and advisory firm delivering information, advice, and tools to business leaders across IT, finance, HR, legal, marketing, supply chain, and customer service functions. This conceptual GraphQL schema models the core domains of Gartner's platform: research documents, analyst profiles, vendor and product coverage, peer reviews, industry taxonomy, and enterprise access controls.
 
 ## Schema Overview

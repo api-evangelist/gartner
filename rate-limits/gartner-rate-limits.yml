@@ -1,0 +1,26 @@
+generated: '2026-09-12'
+method: probed
+source: live probes of gapi.gartner.com and api.gartner.com
+limit_count: 0
+headers: []
+status_on_exhaustion: null
+note: >-
+  Gartner publishes no API reference, so no rate limits, quota windows or throttling
+  response headers are documented anywhere public. The one live first-party API host
+  found in this pass — gapi.gartner.com, an AWS API Gateway behind CloudFront — rejects
+  every unauthenticated request with HTTP 403 {"message":"Missing Authentication Token"}
+  and emits no RateLimit-*, X-RateLimit-* or Retry-After header on that response, so
+  nothing could be observed from the runtime either. An honest zero: not undocumented
+  limits we failed to find, but no public contract to attach limits to.
+evidence:
+- url: https://gapi.gartner.com/
+  status: 403
+  note: >-
+    AWS API Gateway MissingAuthenticationTokenException; response carries no rate-limit
+    headers
+- url: https://api.gartner.com/openapi.json
+  status: 404
+- url: https://www.gartner.com/llms.txt
+  status: 403
+  note: Cloudflare managed challenge on the marketing host
+limits: []

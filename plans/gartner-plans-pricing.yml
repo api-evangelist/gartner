@@ -1,0 +1,28 @@
+generated: '2026-09-12'
+method: searched
+source: https://www.gartner.com/en/become-a-client
+plan_count: 0
+currency: null
+billing: quote-only
+note: >-
+  Gartner publishes no plans, tiers or list prices for any of its products, and no
+  pricing page of any kind was found across www.gartner.com, the Peer Insights vendor
+  help centre (gpivendorresources.gartner.com) or the two API hosts. Research,
+  advisory and conference access are sold as negotiated enterprise subscriptions
+  through a "Become a Client" sales conversation; seat counts, analyst inquiry hours
+  and contract terms are quoted per account. There is no metered or self-serve API
+  product to price, because Gartner publishes no public API. Recorded as an honest
+  zero, not an omission.
+caveat: >-
+  www.gartner.com answers a Cloudflare managed challenge (HTTP 403) to non-browser
+  clients, so the become-a-client page itself could not be read by this pass. The
+  zero is based on the absence of any pricing surface anywhere in the searched and
+  probed set, not on a reading of that page.
+evidence:
+- url: https://www.gartner.com/en/become-a-client
+  status: 403
+  note: Cloudflare managed challenge
+- url: https://gpivendorresources.gartner.com/llms.txt
+  status: 200
+  note: Full vendor help-centre index — 20+ articles, none of them a pricing or plan page
+plans: []
