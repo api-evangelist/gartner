@@ -5,10 +5,17 @@
       "source": "https://gpivendorresources.gartner.com/en/",
       "feed_url": "https://gpivendorresources.gartner.com/en/feed.xml",
       "title": "",
-      "saved": 1,
+      "saved": 0,
       "method": "discovered"
+    },
+    {
+      "source": "https://gpivendorresources.gartner.com/en/feed.xml",
+      "feed_url": "https://gpivendorresources.gartner.com/en/feed.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     }
   ],
-  "post_count": 1,
-  "fetched": "2026-09-13T13:00:00Z"
+  "post_count": 17,
+  "fetched": "2026-09-19T20:17:39Z"
 }
