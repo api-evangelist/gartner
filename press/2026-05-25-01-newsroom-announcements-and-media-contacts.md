@@ -1,7 +1,9 @@
 ---
 title: Newsroom, Announcements and Media Contacts
 url: https://www.gartner.com/en/newsroom
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Gartner" press release artificial intelligence'
 position: 1
 source: serpapi-google

@@ -1,7 +1,9 @@
 ---
 title: Gartner Says Autonomous Business and AI Layoffs May ...
 url: https://www.gartner.com/en/newsroom/press-releases/2026-05-05-gartner-says-autonomous-business-and-artificial-intelligence-layoffs-may-create-budget-room-but-do-not-deliver-returns
-date: '2026-05-25'
+published: '2026-05-05'
+date_basis: url-derived
+harvested: '2026-05-25'
 query: '"Gartner" press release artificial intelligence'
 position: 3
 source: serpapi-google
